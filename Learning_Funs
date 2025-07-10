@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Learning_Funs {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+
+        System.out.print("\nEnter a number to reverse : ");
+        int num3 = sc.nextInt();
+        System.out.print("\nEnter a number to check if palindrome : ");
+        int num4 = sc.nextInt();
+
+        Learning_Funs obj = new Learning_Funs();
+
+        obj.arith_demo(num1, num2);
+        obj.swapping(num1, num2);
+        /*disp();
+        System.out.println(displ());
+        System.out.println("hello");*/
+
+        System.out.println("Reversed Number: " + reverse(num3));
+        obj.palindrom(num4);
+
+    }
+
+    public static void disp() {
+        System.out.println("Hii");
+    }
+
+    public static int displ() {
+        System.out.println("Hiiii");
+        return 256;
+    }
+
+    public void arith_demo(int a, int b) {
+        System.out.println("\nArithmetic Operations");
+        System.out.println("Addition of the numbers: " + (a + b));
+        System.out.println("Subtraction of the numbers: " + (a - b));
+        System.out.println("Multiplication of the numbers: " + (a * b));
+        System.out.println("Division of the numbers: " + (a / b));
+    }
+
+    public void swapping(int a, int b) {
+        System.out.println("\n--- Swapping ---");
+        System.out.println("Before swapping: a = " + a + ", b = " + b);
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+    }
+
+    static int reverse(int no) {
+        int rev = 0;
+        while (no > 0) {
+            int digit = no % 10;
+            rev = rev * 10 + digit;
+            no /= 10;
+        }
+        return rev;
+    }
+
+    public void palindrom(int num) {
+        int reversed = reverse(num);
+        if (num == reversed) {
+            System.out.println("The given number is a palindrome");
+        } else {
+            System.out.println("The given number is not a palindrome");
+        }
+    }
+}
