@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Param_passing {
+    Scanner sc= new Scanner(System.in);
+
+    public static void main(String[] args) {
+        Param_passing obj=new Param_passing();
+        obj.adding2_nos();
+    }
+    public void adding2_nos(){
+        int num1, num2;
+        System.out.println("\n------------- Adding -------------");
+        System.out.println("Enter 1st Number:");
+        num1=sc.nextInt();
+        System.out.println("Enter 2nd Number:");
+        num2=sc.nextInt();
+        System.out.println("The sum of the two numbers is:"+(num1+num2));
+
+        swapping2_nos(num1, num2);
+        Greater_among2(num1,num2);
+    }
+    public void swapping2_nos(int num1,int num2){
+        System.out.println("\n------------- Swapping -------------");
+        System.out.println("Before swapping: num1 = " + num1 + ", num2 = " + num2);
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+        System.out.println("After swapping: num1 = " + num1 + ", num2 = " + num2);
+
+    }
+    public void Greater_among2(int num1, int num2){
+        System.out.println("\n------------- Greater -------------");
+        if(num1<num2){
+            System.out.println("Num2 is Greater than Num1");
+        }else{
+            System.out.println("Num1 is Greater than Num2");
+        }
+    }
+}
